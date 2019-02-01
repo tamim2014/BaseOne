@@ -39,7 +39,7 @@
             {{form_end(commentForm)}}
         {% else %}
             <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté !</h2>
-            <a href="#" class="btn btn-primary">
+            <a href="{{path('security_login')}}" class="btn btn-primary" >             
                 Connexion
             </a>
         {% endif %}
