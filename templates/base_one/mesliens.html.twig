@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %}
+<link href="/css/accueil.css" rel="stylesheet" />
+{% endblock %}
+  
+{% block body %}
+    <h1>My favorite links!</h1>
+    <p>
+            
+            <h3>1)Web serveces(API REST/ API SOAP)</h3>   
+            <div  class="creux"  >
+                <a target="_blank" href="https://openclassrooms.com/fr/courses/3449001-utilisez-des-api-rest-dans-vos-projets-web/3449008-quest-ce-quune-api"> <i class="fa fa-check-square"></i> Notion d'API Web</a><br>
+                <a target="_blank" href="https://blog.ippon.fr/2015/01/30/postman-le-client-pour-api-web-qui-vous-fera-oublier-les-autres/"><i class="fa fa-check-square"></i> Un client pour API Web: Postman</a><br> 
+                <a target="_blank" href="https://www.youtube.com/watch?v=sFc1zniWdx0"><i class="fa fa-check-square"></i> Exemple : API REST</a><br>               
+            </div>
+            <h3>2)Mise en production (mise en ligne)</h3>
+            <div class="creux" >
+                <SPAN style="color:darkolivegreen"><a target="_blank" href="#"><i class="fa fa-check-square"></i> Exemple</a></SPAN><br>                                 
+             </div>
+            <h3>3) Bootstrap 4 Form Theme & Validations</h3>
+            <div class="creux" >
+                <SPAN style="color:rgb(226, 226, 248)"><a target="_blank" href="https://symfony.com/doc/current/form/bootstrap4.html"><i class="fa fa-check-square"></i> symfony.com/doc/current/form/bootstrap4.html</a></SPAN><br>                 
+                <hr>
+                <div style="margin-left:50px;">  
+                    <span><i>A la fin du fichier twig.yaml ajouter  cette ligne :</i></span><br>
+                    <SPAN style="color:darkolivegreen">form_themes: ['bootstrap_4_layout.html.twig']</SPAN><br>
+                    <span><i>Où se trouve le fichier twig.yaml ?</i></span><br>
+                    <SPAN style="color:darkolivegreen"> config/package/twig.yaml</SPAN> 
+                </div>
+                <hr>
+                
+                <a target="_blank" href="https://symfony.com/doc/current/validation.html"><i class="fa fa-check-square"></i> Validation</a> <br>  
+                <a target="_blank" href="https://symfony.com/doc/current/reference/constraints.html"><i class="fa fa-check-square"></i> Validation Constraints Reference</a>                           
+            </div>
+            <h3>4)Les icones fa fa-xyz:</h3>
+            <div class="creux" >            
+                <a target="_blank" href="https://origin.fontawesome.com/icons?d=gallery&q=file"><i class="fa fa-check-square"></i> origin.fontawesome.com</a>                 
+            </div>
+            <h3>5) Docs PHP:</h3>
+            <div class="creux" >            
+                <a target="_blank" href="http://php.net/manual/fr/function.require.php"><i class="fa fa-check-square"></i> php.net</a>                
+            </div>
+
+            <h3>6) Gestion des utilisateurs:</h3>
+            <div class="creux" >           
+                <a target="_blank" href="https://api.symfony.com/3.4/Symfony/Component/Security/Core/User/UserInterface.html"><i class="fa fa-check-square"></i> api.symfony.com/3.4/</a>                 
+            </div>
+    </p>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+    <!-- L' ARTICLE -->
+    <article>
+        <h2>{{  article.titre }}</h2>
+        <div class="metadata">
+            Ecrit le {{article.createdAt|date('d/m/Y')}} 
+            à {{article.createdAt|date('H:i')}} ,
+            Catégorie: "{{article.category.title}}"
+             Par {{article.auteur}}
+        </div>
+        <div class="content">
+            <img src="{{ article.image}}" alt="">
+        
+            {{article.contenu | raw}}    
+        </div>
+    </article>
+    <!-- LES COMMENTAIRES -->
+    <section id="commentaires">
+        <h1>{{article.comments | length}} Commentaires :</h1>
+        {%  for comment in article.comments %}
+            <div class="comment">
+                <div class="row">
+                    <div class="col-3">
+                        {{comment.author}} (<small>{{comment.createdAt | date('d/m/Y à H:i')}}</small>)
+                    </div>
+                    <div class="col">
+                        {{comment.content | raw}}
+                    </div>
+                </div>
+            </div>
+        {%  endfor %}
+
+        {% if app.user %}
+            {{form_start(commentForm)}}
+            {{form_row(commentForm.author, {'attr':{'placeholder':'Votre nom'}})}}
+            {{form_row(commentForm.content, {'attr':{'placeholder':'Votre commentaire'}})}}
+            <button type="submit" class="btn btn-success">Commenter !</button>
+            {{form_end(commentForm)}}
+        {% else %}
+            <h2>Vous ne pouvez pas commenter si vous n'êtes pas connecté !</h2>
+            <a href="#" class="btn btn-primary">
+                Connexion
+            </a>
+        {% endif %}
+    </section>
+{% endblock %}
